@@ -34,7 +34,7 @@ const LegacyCinePlayer = ({
   };
 
   return (
-    <div className="LegacyCinePlayer border-primary-light flex h-10 flex-row items-center justify-center rounded-full border">
+    <div className="LegacyCinePlayer bg-black flex h-10 flex-row items-center justify-center rounded-full border">
       <IconButton
         variant="text"
         color="inherit"
@@ -72,7 +72,7 @@ const LegacyCinePlayer = ({
   );
 };
 
-const noop = () => {};
+const noop = () => { };
 
 LegacyCinePlayer.defaultProps = {
   isPlaying: false,

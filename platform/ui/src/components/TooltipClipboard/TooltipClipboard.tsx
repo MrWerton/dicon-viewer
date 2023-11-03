@@ -135,13 +135,13 @@ const TooltipClipboard = ({ children, text }) => {
       >
         <div
           className={classnames(
-            'bg-primary-dark border-secondary-main relative flex items-center rounded border px-2 py-2 text-base text-white'
+            'bg-transparent border-secondary-main relative flex items-center rounded border px-2 py-2 text-base text-white'
           )}
         >
           {message || (
             <>
               {children}
-              <div className="border-secondary-light ml-2 border-l pl-2">
+              <div className="border-bg-black ml-2 border-l pl-2">
                 <Icon
                   name="clipboard"
                   className="w-4 text-white"

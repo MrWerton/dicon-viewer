@@ -29,7 +29,7 @@ const ButtonGroup = ({
     <div
       className={classnames(
         wrapperClasses,
-        'border-secondary-light rounded-[5px] border bg-black text-[13px] '
+        'border-bg-black rounded-[5px] border bg-black text-[13px] '
       )}
     >
       {buttons.map((buttonProps, index) => {

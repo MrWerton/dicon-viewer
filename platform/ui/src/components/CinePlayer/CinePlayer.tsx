@@ -56,7 +56,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
     <div
       className={classNames(
         className,
-        'border-secondary-light/60 bg-primary-dark flex select-none items-center gap-2 rounded border px-2 py-2'
+        'border-bg-black/60 bg-transparent flex select-none items-center gap-2 rounded border px-2 py-2'
       )}
     >
       <Icon
@@ -81,7 +81,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
           />
         }
       >
-        <div className="border-secondary-light flex h-6 items-stretch gap-1 rounded border">
+        <div className="border-bg-black flex h-6 items-stretch gap-1 rounded border">
           <div
             className={`${fpsButtonClassNames} rounded-l`}
             onClick={() => handleSetFrameRate(frameRate - 1)}
@@ -108,7 +108,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
   );
 };
 
-const noop = () => {};
+const noop = () => { };
 
 CinePlayer.defaultProps = {
   isPlaying: false,

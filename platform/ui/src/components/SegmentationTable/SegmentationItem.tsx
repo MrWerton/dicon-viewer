@@ -33,7 +33,7 @@ const SegmentationItem = ({
       className={classnames(
         'group relative flex cursor-pointer items-stretch border border-transparent bg-black outline-none transition duration-300',
         {
-          'border-primary-light overflow-hidden rounded': isActive,
+          'bg-black overflow-hidden rounded': isActive,
         }
       )}
       onMouseEnter={onMouseEnter}
@@ -47,8 +47,8 @@ const SegmentationItem = ({
         className={classnames(
           'flex h-auto w-6 items-center justify-center text-center text-base transition duration-300',
           {
-            'bg-primary-light text-black': isActive,
-            'bg-primary-dark text-primary-light group-hover:bg-secondary-main': !isActive,
+            'bg-black text-white': isActive,
+            'bg-transparent text-primary-light group-hover:bg-secondary-main': !isActive,
           }
         )}
       >
@@ -56,8 +56,8 @@ const SegmentationItem = ({
           <Icon
             name="close"
             className={classnames('w-[10px] text-center transition duration-500 hover:opacity-80', {
-              'bg-primary-light text-black': isActive,
-              'bg-primary-dark text-primary-light group-hover:bg-secondary-main': !isActive,
+              'bg-black text-white': isActive,
+              'bg-transparent text-primary-light group-hover:bg-secondary-main': !isActive,
             })}
             onClick={e => {
               e.stopPropagation();
@@ -114,7 +114,7 @@ const SegmentationItem = ({
             displayText.map(line => (
               <span
                 key={line}
-                className="border-primary-light border-l pl-2 text-base text-white"
+                className="bg-black border-l pl-2 text-base text-white"
               >
                 {line}
               </span>

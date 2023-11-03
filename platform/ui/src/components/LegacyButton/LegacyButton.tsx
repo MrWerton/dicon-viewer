@@ -27,46 +27,46 @@ const roundedClasses = {
 const variants = {
   text: {
     default:
-      'text-primary-light hover:bg-primary-light hover:text-white active:opacity-80 focus:bg-primary-light focus:text-white',
+      'text-primary-light hover:bg-black hover:text-white active:opacity-80 focus:bg-black focus:text-white',
     primary:
-      'text-primary-main hover:bg-primary-main hover:text-white active:opacity-80 focus:bg-primary-main focus:text-white',
+      'text-primary-main hover:bg-black hover:text-white active:opacity-80 focus:bg-black focus:text-white',
     secondary:
-      'text-secondary-light hover:bg-secondary-light hover:text-white active:opacity-80 focus:bg-secondary-light focus:text-white',
+      'text-bg-black hover:bg-bg-black hover:text-white active:opacity-80 focus:bg-bg-black focus:text-white',
     white:
-      'text-white hover:bg-white hover:text-black active:opacity-80 focus:bg-white focus:text-black',
+      'text-white hover:bg-white hover:text-white active:opacity-80 focus:bg-white focus:text-white',
     black:
-      'text-black hover:bg-black hover:text-white focus:bg-black focus:text-white active:opacity-80',
+      'text-white hover:bg-black hover:text-white focus:bg-black focus:text-white active:opacity-80',
   },
   outlined: {
     default:
-      'text-primary-light hover:bg-primary-light hover:text-black focus:text-black focus:bg-primary-light active:opacity-80',
+      'text-primary-light hover:bg-black hover:text-white focus:text-white focus:bg-black active:opacity-80',
     primary: 'text-primary-main hover:opacity-80 active:opacity-100 focus:opacity-80',
-    secondary: 'text-secondary-light hover:opacity-80 active:opacity-100 focus:opacity-80',
+    secondary: 'text-bg-black hover:opacity-80 active:opacity-100 focus:opacity-80',
     translucent: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
     white:
-      'text-black hover:bg-primary-main focus:bg-primary-main hover:border-black focus:border-black',
+      'text-white hover:bg-black focus:bg-black hover:border-black focus:border-black',
     black:
-      'text-white hover:bg-primary-main focus:bg-primary-main hover:border-black focus:border-black',
+      'text-white hover:bg-black focus:bg-black hover:border-black focus:border-black',
     primaryActive: 'text-primary-active hover:opacity-80 active:opacity-100 focus:opacity-80',
     primaryLight:
       'border bg-transparent border-primary-main text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
   },
   contained: {
-    default: 'text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
+    default: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
     primary: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
     primaryDark: 'text-primary-active hover:opacity-80 active:opacity-100 focus:opacity-80',
     secondary: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
-    white: 'text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
+    white: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
     black: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
-    light: 'border text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
+    light: 'border text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
   },
   disabled: {
-    default: 'cursor-not-allowed opacity-50 text-black',
+    default: 'cursor-not-allowed opacity-50 text-white',
     primary: 'cursor-not-allowed opacity-50 text-white',
     secondary: 'cursor-not-allowed opacity-50 text-white',
-    white: 'cursor-not-allowed opacity-50 text-black',
+    white: 'cursor-not-allowed opacity-50 text-white',
     black: 'cursor-not-allowed opacity-50 text-white',
-    light: 'cursor-not-allowed opacity-50 border text-black',
+    light: 'cursor-not-allowed opacity-50 border text-white',
   },
 };
 
@@ -86,21 +86,21 @@ const defaultVariantBackGroundColor = {
     white: '',
   },
   contained: {
-    default: 'bg-primary-light',
-    primary: 'bg-primary-main',
-    primaryDark: 'bg-primary-dark',
-    secondary: 'bg-secondary-light',
+    default: 'bg-black',
+    primary: 'bg-black',
+    primaryDark: 'bg-transparent',
+    secondary: 'bg-bg-black',
     white: 'bg-white',
     black: 'bg-black',
-    light: 'bg-primary-light',
+    light: 'bg-black',
   },
   disabled: {
-    default: 'bg-primary-light',
-    primary: 'bg-primary-main',
-    secondary: 'bg-secondary-light',
+    default: 'bg-black',
+    primary: 'bg-black',
+    secondary: 'bg-bg-black',
     white: 'bg-white',
     black: 'bg-black',
-    light: 'bg-primary-light',
+    light: 'bg-black',
   },
 };
 
@@ -116,10 +116,10 @@ const _getVariantClass = (variant, color, bgColor = null) => {
 
 const borderClasses = {
   none: '',
-  light: 'border border-primary-light',
+  light: 'border bg-black',
   primary: 'border border-primary-main',
   primaryActive: 'border border-primary-active',
-  secondary: 'border border-secondary-light',
+  secondary: 'border border-bg-black',
   white: 'border border-white',
   black: 'border border-black',
 };
@@ -210,7 +210,7 @@ LegacyButton.defaultProps = {
   color: defaults.color,
   disabled: false,
   children: '',
-  onClick: () => {},
+  onClick: () => { },
 };
 
 LegacyButton.propTypes = {

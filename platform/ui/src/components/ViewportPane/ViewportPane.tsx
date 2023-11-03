@@ -64,9 +64,9 @@ function ViewportPane({
       onScroll={onInteractionHandler}
       onWheel={onInteractionHandler}
       className={classnames(
-        'hover:border-primary-light group h-full w-full overflow-hidden rounded-md transition duration-300',
+        'hover:bg-black group h-full w-full overflow-hidden rounded-md transition duration-300',
         {
-          'border-primary-light border-2': isActive,
+          'bg-black border-2': isActive,
           'border-2 border-transparent': !isActive,
         },
         className
@@ -80,7 +80,7 @@ function ViewportPane({
           'h-full w-full overflow-hidden rounded-md group-hover:border-transparent',
           {
             'border border-transparent': isActive,
-            'border-secondary-light border': !isActive,
+            'border-bg-black border': !isActive,
           },
           className
         )}
@@ -108,7 +108,7 @@ ViewportPane.propTypes = {
   onDoubleClick: PropTypes.func,
 };
 
-const noop = () => {};
+const noop = () => { };
 
 ViewportPane.defaultProps = {
   onInteraction: noop,

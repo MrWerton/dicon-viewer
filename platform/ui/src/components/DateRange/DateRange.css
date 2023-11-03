@@ -76,7 +76,7 @@
 .CalendarDay__selected,
 .CalendarDay__selected:active,
 .CalendarDay__selected:hover {
-  @apply bg-primary-main border-primary-main border-0 text-white;
+  @apply bg-black border-primary-main border-0 text-white;
 }
 
 .CalendarDay__blocked_out_of_range:hover {
@@ -84,7 +84,7 @@
 }
 
 .CalendarDay__selected_span {
-  @apply bg-primary-light border-0;
+  @apply bg-black border-0;
 }
 
 /* MONTH NAVIGATION BUTTONS */

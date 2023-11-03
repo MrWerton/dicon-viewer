@@ -40,7 +40,7 @@ const ViewportActionBar = ({
   // - series description right margin (4px)
   const zeroWidthSeriesDescriptionSpace = 25;
 
-  const separatorClasses = 'border-l py-2 mx-2 border-secondary-light';
+  const separatorClasses = 'border-l py-2 mx-2 border-bg-black';
   const textEllipsisClasses = 'overflow-hidden shrink text-ellipsis';
   const arrowClasses = 'cursor-pointer shrink-0 mr-2 text-white hover:text-primary-light';
 

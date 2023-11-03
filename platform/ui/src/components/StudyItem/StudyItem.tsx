@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import Icon from '../Icon';
 
 const baseClasses =
-  'first:border-0 border-t border-secondary-light cursor-pointer select-none outline-none';
+  'first:border-0 border-t border-bg-black cursor-pointer select-none outline-none';
 
 const StudyItem = ({
   date,
@@ -19,7 +19,7 @@ const StudyItem = ({
   return (
     <div
       className={classnames(
-        isActive ? 'bg-secondary-dark' : 'hover:bg-secondary-main bg-black',
+        isActive ? 'bg-gray-900' : 'hover:bg-secondary-main bg-black',
         baseClasses
       )}
       onClick={onClick}
@@ -49,7 +49,7 @@ const StudyItem = ({
             className={classnames(
               'bg-secondary-main mt-2 flex flex-row py-1 pl-2 pr-4 text-base text-white ',
               isActive
-                ? 'border-secondary-light flex-1 justify-center border-t'
+                ? 'border-bg-black flex-1 justify-center border-t'
                 : 'mx-4 mb-4 rounded-sm'
             )}
           >

@@ -22,7 +22,7 @@ const MeasurementItem = ({ uid, index, label, displayText, isActive, onClick, on
       className={classnames(
         'group flex cursor-pointer border border-transparent bg-black outline-none transition duration-300',
         {
-          'border-primary-light overflow-hidden rounded': isActive,
+          'bg-black overflow-hidden rounded': isActive,
         }
       )}
       onMouseEnter={onMouseEnter}
@@ -34,8 +34,8 @@ const MeasurementItem = ({ uid, index, label, displayText, isActive, onClick, on
     >
       <div
         className={classnames('w-6 py-1 text-center text-base transition duration-300', {
-          'bg-primary-light active text-black': isActive,
-          'bg-primary-dark text-primary-light group-hover:bg-secondary-main': !isActive,
+          'bg-black active text-white': isActive,
+          'bg-transparent text-primary-light group-hover:bg-secondary-main': !isActive,
         })}
       >
         {index}
@@ -45,7 +45,7 @@ const MeasurementItem = ({ uid, index, label, displayText, isActive, onClick, on
         {displayText.map((line, i) => (
           <span
             key={i}
-            className="border-primary-light border-l pl-2 text-base text-white"
+            className="bg-black border-l pl-2 text-base text-white"
             dangerouslySetInnerHTML={{ __html: line }}
           ></span>
         ))}

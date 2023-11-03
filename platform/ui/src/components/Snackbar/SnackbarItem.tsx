@@ -41,10 +41,10 @@ const SnackbarItem = ({ options, onClose }) => {
         <div className="mx-2 flex-col">
           {/* </span> */}
           {options.title && (
-            <div className="break-normal text-lg font-bold text-black">{options.title}</div>
+            <div className="break-normal text-lg font-bold text-white">{options.title}</div>
           )}
           {options.message && (
-            <div className="break-normal text-base text-black">{options.message}</div>
+            <div className="break-normal text-base text-white">{options.message}</div>
           )}
         </div>
         <div
@@ -53,7 +53,7 @@ const SnackbarItem = ({ options, onClose }) => {
         >
           <Icon
             name="close"
-            className="text-black"
+            className="text-white"
           />
         </div>
       </div>

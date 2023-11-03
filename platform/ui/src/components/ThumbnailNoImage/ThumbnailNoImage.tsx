@@ -34,7 +34,7 @@ const ThumbnailNoImage = ({
     <div
       className={classnames(
         'flex flex-1 cursor-pointer select-none flex-row rounded outline-none hover:border-blue-300 focus:border-blue-300',
-        isActive ? 'border-primary-light border-2' : 'border border-transparent'
+        isActive ? 'bg-black border-2' : 'border border-transparent'
       )}
       style={{
         padding: isActive ? '11px' : '12px',
@@ -53,7 +53,7 @@ const ThumbnailNoImage = ({
               name="list-bullets"
               className={classnames(
                 'w-12',
-                isHydratedForDerivedDisplaySet ? 'text-primary-light' : 'text-secondary-light'
+                isHydratedForDerivedDisplaySet ? 'text-primary-light' : 'text-bg-black'
               )}
             />
             <Tooltip
@@ -64,8 +64,8 @@ const ThumbnailNoImage = ({
                 className={classnames(
                   'rounded-sm px-3  text-lg',
                   isHydratedForDerivedDisplaySet
-                    ? 'bg-primary-light text-black'
-                    : 'bg-primary-main text-white'
+                    ? 'bg-black text-white'
+                    : 'bg-black text-white'
                 )}
               >
                 {modality}

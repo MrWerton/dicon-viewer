@@ -41,7 +41,7 @@ export default class PortalTooltipCard extends Component {
 
   defaultArrowStyle = {
     color: '#090c29', // primary-dark
-    borderColor: 'rgba(58, 63, 153, 1)', // secondary-light
+    borderColor: 'rgba(58, 63, 153, 1)', // bg-black
   };
 
   rootRef = React.createRef();
@@ -54,7 +54,7 @@ export default class PortalTooltipCard extends Component {
     const style = {
       position: 'absolute',
       //padding: '5px',
-      background: 'bg-primary-dark',
+      background: 'bg-transparent',
       //boxShadow: '0 0 4px rgba(0,0,0,.3)',
       borderRadius: '3px',
       //opacity: this.state.hover || this.props.active ? 1 : 0,

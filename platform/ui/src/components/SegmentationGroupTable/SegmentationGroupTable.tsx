@@ -96,7 +96,7 @@ const SegmentationGroupTable = ({
             segmentationConfig={segmentationConfig}
           />
         )}
-        <div className="bg-primary-dark">
+        <div className="bg-transparent">
           {segmentations?.length === 0 ? (
             <div className="select-none rounded-[4px]">
               {showAddSegmentation && !disableEditing && (
@@ -215,27 +215,27 @@ SegmentationGroupTable.defaultProps = {
   showAddSegmentation: true,
   showAddSegment: true,
   showDeleteSegment: true,
-  onSegmentationAdd: () => {},
-  onSegmentationEdit: () => {},
-  onSegmentationClick: () => {},
-  onSegmentationDelete: () => {},
-  onSegmentationDownload: () => {},
-  onSemgnetationDownloadRTSS: () => {},
-  storeSegmentation: () => {},
-  onSegmentClick: () => {},
-  onSegmentAdd: () => {},
-  onSegmentDelete: () => {},
-  onSegmentEdit: () => {},
-  onToggleSegmentationVisibility: () => {},
-  onToggleSegmentVisibility: () => {},
-  onToggleSegmentLock: () => {},
-  onSegmentColorClick: () => {},
-  setFillAlpha: () => {},
-  setFillAlphaInactive: () => {},
-  setOutlineWidthActive: () => {},
-  setOutlineOpacityActive: () => {},
-  setRenderFill: () => {},
-  setRenderInactiveSegmentations: () => {},
-  setRenderOutline: () => {},
+  onSegmentationAdd: () => { },
+  onSegmentationEdit: () => { },
+  onSegmentationClick: () => { },
+  onSegmentationDelete: () => { },
+  onSegmentationDownload: () => { },
+  onSemgnetationDownloadRTSS: () => { },
+  storeSegmentation: () => { },
+  onSegmentClick: () => { },
+  onSegmentAdd: () => { },
+  onSegmentDelete: () => { },
+  onSegmentEdit: () => { },
+  onToggleSegmentationVisibility: () => { },
+  onToggleSegmentVisibility: () => { },
+  onToggleSegmentLock: () => { },
+  onSegmentColorClick: () => { },
+  setFillAlpha: () => { },
+  setFillAlphaInactive: () => { },
+  setOutlineWidthActive: () => { },
+  setOutlineOpacityActive: () => { },
+  setRenderFill: () => { },
+  setRenderInactiveSegmentations: () => { },
+  setRenderOutline: () => { },
 };
 export default SegmentationGroupTable;

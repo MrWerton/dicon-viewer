@@ -17,7 +17,7 @@ const AdvancedToolbox = ({ title, items }) => {
   return (
     <PanelSection title={title}>
       <div className="flex flex-col bg-black">
-        <div className="bg-primary-dark mt-0.5 flex flex-wrap py-2">
+        <div className="bg-transparent mt-0.5 flex flex-wrap py-2">
           {items?.map(item => {
             return (
               <Tooltip
@@ -38,10 +38,10 @@ const AdvancedToolbox = ({ title, items }) => {
                   <div
                     className={classnames(
                       'text-primary-active grid h-[40px] w-[40px] place-items-center rounded-md bg-black  ',
-                      activeItemName === item.name && 'bg-primary-light text-black',
+                      activeItemName === item.name && 'bg-black text-white',
                       item.disabled && 'opacity-50',
                       !item.disabled &&
-                        'hover:bg-primary-light cursor-pointer hover:cursor-pointer hover:text-black'
+                      'hover:bg-black cursor-pointer hover:cursor-pointer hover:text-white'
                     )}
                   >
                     <Icon name={item.icon} />
@@ -51,7 +51,7 @@ const AdvancedToolbox = ({ title, items }) => {
             );
           })}
         </div>
-        <div className="bg-primary-dark h-auto px-2">
+        <div className="bg-transparent h-auto px-2">
           <ToolSettings options={activeItemOptions} />
         </div>
       </div>

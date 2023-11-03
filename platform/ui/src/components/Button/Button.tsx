@@ -35,7 +35,7 @@ const baseEnabledClasses = 'text-white';
 
 const enabledClasses = {
   [ButtonEnums.type.primary]: classnames(
-    'bg-primary-main',
+    'bg-black',
     baseEnabledClasses,
     enabledEffectClasses[ButtonEnums.type.primary]
   ),
@@ -118,7 +118,7 @@ const Button = ({
 Button.defaultProps = {
   disabled: false,
   children: '',
-  onClick: () => {},
+  onClick: () => { },
   type: defaults.type,
   size: defaults.size,
 };

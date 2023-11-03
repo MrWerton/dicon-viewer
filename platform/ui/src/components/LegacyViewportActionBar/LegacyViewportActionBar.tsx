@@ -68,7 +68,7 @@ const LegacyViewportActionBar = ({
         <div className="ml-4 flex flex-col justify-start">
           <div className="flex">
             <span className="text-base text-white">{studyDate}</span>
-            <span className="border-primary-light text-primary-light ml-2 border-l pl-2 text-base">
+            <span className="bg-black text-primary-light ml-2 border-l pl-2 text-base">
               S: {currentSeries}
             </span>
           </div>
