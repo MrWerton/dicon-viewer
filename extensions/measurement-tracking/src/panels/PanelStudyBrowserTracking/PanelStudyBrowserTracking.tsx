@@ -93,6 +93,7 @@ function PanelStudyBrowserTracking({
 
       const mappedStudies = _mapDataSourceStudies(qidoStudiesForPatient);
       const actuallyMappedStudies = mappedStudies.map(qidoStudy => {
+        console.log(qidoStudy, '--------qidoStudy');
         return {
           studyInstanceUid: qidoStudy.StudyInstanceUID,
           date: formatDate(qidoStudy.StudyDate) || t('NoStudyDate'),
@@ -341,7 +342,7 @@ function PanelStudyBrowserTracking({
           SeriesInstanceUID: displaySet.SeriesInstanceUID,
         });
       }}
-      onClickThumbnail={() => {}}
+      onClickThumbnail={() => { }}
       onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
       activeDisplaySetInstanceUIDs={activeViewportDisplaySetInstanceUIDs}
     />
@@ -367,6 +368,7 @@ export default PanelStudyBrowserTracking;
  */
 function _mapDataSourceStudies(studies) {
   return studies.map(study => {
+    console.log(study, 'lololol--------------------------------');
     // TODO: Why does the data source return in this format?
     return {
       AccessionNumber: study.accession,
@@ -545,18 +547,22 @@ function _createStudyBrowserTabs(
 ) {
   const primaryStudies = [];
   const recentStudies = [];
-  const allStudies = [];
-
+  console.log(studyDisplayList, 'studydisplaylist');
+  console.log(displaySets, 'displaySets');
   // Iterate over each study...
   studyDisplayList.forEach(study => {
     // Find it's display sets
     const displaySetsForStudy = displaySets.filter(
       ds => ds.StudyInstanceUID === study.studyInstanceUid
     );
+    console.log(displaySetsForStudy, 'displaySetsForStudy----');
 
     // Sort them
     const dsSortFn = hangingProtocolService.getDisplaySetSortFunction();
     displaySetsForStudy.sort(dsSortFn);
+
+    const aiGenerated = displaySetsForStudy.filter(item => item.seriesNumber % 2 === 0);
+    const original = displaySetsForStudy.filter(item => item.seriesNumber % 2 !== 0);
 
     /* Sort by series number, then by series date
       displaySetsForStudy.sort((a, b) => {
@@ -572,19 +578,17 @@ function _createStudyBrowserTabs(
     */
 
     // Map the study to it's tab/view representation
-    const tabStudy = Object.assign({}, study, {
-      displaySets: displaySetsForStudy,
+    const tabStudyAi = Object.assign({}, study, {
+      displaySets: aiGenerated,
+    });
+    const tabStudyOriginal = Object.assign({}, study, {
+      displaySets: original,
     });
 
+    recentStudies.push(tabStudyAi);
+    primaryStudies.push(tabStudyOriginal);
+
     // Add the "tab study" to the 'primary', 'recent', and/or 'all' tab group(s)
-    if (primaryStudyInstanceUIDs.includes(study.studyInstanceUid)) {
-      primaryStudies.push(tabStudy);
-      allStudies.push(tabStudy);
-    } else {
-      // TODO: Filter allStudies to dates within one year of current date
-      recentStudies.push(tabStudy);
-      allStudies.push(tabStudy);
-    }
   });
 
   // Newest first
@@ -598,18 +602,14 @@ function _createStudyBrowserTabs(
   const tabs = [
     {
       name: 'primary',
-      label: 'Primary',
+      label: 'Original',
       studies: primaryStudies.sort((studyA, studyB) => _byDate(studyA.date, studyB.date)),
     },
+
     {
       name: 'recent',
-      label: 'Recent',
+      label: 'Analisados',
       studies: recentStudies.sort((studyA, studyB) => _byDate(studyA.date, studyB.date)),
-    },
-    {
-      name: 'all',
-      label: 'All',
-      studies: allStudies.sort((studyA, studyB) => _byDate(studyA.date, studyB.date)),
     },
   ];
 

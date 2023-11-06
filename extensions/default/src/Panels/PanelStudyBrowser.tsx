@@ -211,7 +211,7 @@ function PanelStudyBrowser({
     const shouldCollapseStudy = expandedStudyInstanceUIDs.includes(StudyInstanceUID);
     const updatedExpandedStudyInstanceUIDs = shouldCollapseStudy
       ? // eslint-disable-next-line prettier/prettier
-        [...expandedStudyInstanceUIDs.filter(stdyUid => stdyUid !== StudyInstanceUID)]
+      [...expandedStudyInstanceUIDs.filter(stdyUid => stdyUid !== StudyInstanceUID)]
       : [...expandedStudyInstanceUIDs, StudyInstanceUID];
 
     setExpandedStudyInstanceUIDs(updatedExpandedStudyInstanceUIDs);
@@ -360,7 +360,7 @@ function _createStudyBrowserTabs(primaryStudyInstanceUIDs, studyDisplayList, dis
   const tabs = [
     {
       name: 'primary',
-      label: 'Primary',
+      label: 'A ',
       studies: primaryStudies,
     },
     {
